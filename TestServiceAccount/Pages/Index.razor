@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<button @onclick="() => GetGoogleSheets()">Read Google sheets</button>
+<button @onclick="() => WriteGoogleSheets()">Write to Google Sheets</button>
+
+@if (IsBusy)
+{
+    <span>Loading....</span>
+}
+
+@if (Value != null)
+{
+<textarea @ref="TextAreaRef" style="width: 100%" rows="10">@Value</textarea>
+}
